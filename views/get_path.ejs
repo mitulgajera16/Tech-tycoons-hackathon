@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    ADD Neighbour
+  </title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+  body{
+    background-color: gray,
+    color:white
+  }
+    select {
+      border-radius: 3px;
+      color: black
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <form id="tableForm" action="/get_path" method="post">
+    SELECT START SIGNAL:
+    <select id="start" name="start">
+        <optgroup label="SELECT START SIGNAL">
+            <% listSignals.forEach(function(signal){ %>
+            <option value="<%= signal._id %>"><%= signal.name %></option>
+            <% }) %>
+        </optgroup>
+    </select>
+    </br>
+    </br>
+    SELECT DESTINATION SIGNAL:
+    <select id="end" name="end">
+        <optgroup label="SELECT DESTINATION SIGNAL">
+            <% listSignals.forEach(function(signal){ %>
+            <option value="<%= signal._id %>"><%= signal.name %></option>
+            <% }) %>
+        </optgroup>
+    </select>
+  </br>
+  </br>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

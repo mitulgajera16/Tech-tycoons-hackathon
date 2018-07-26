@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+  td {
+    border-radius: 3px;
+  }
+ </style>
+</head>
+	<body>
+
+  <form method="post"
+  action="add_circle">
+    <table>
+        <tr>
+          <td>
+            NAME
+          </td>
+          <td colspan="2">
+            <input type="text" name="c_name" placeholder="CIRCLE NAME" required />
+          </td>
+        </tr>
+        <tr>
+            <td>
+              LOCATION:
+            </td>
+            <td colspan="2">
+              <table >
+                <tr>
+                  <td>
+                    <input type="text" name="c_lat" placeholder="LATTITUDE" required/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" name="c_lng" placeholder="LONGITUDE" required/>
+                  </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="ADD" name="submit"/>
+          </td>
+        </tr>
+    </table>
+	</form>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+  td {
+    border-radius: 3px;
+  }
+ </style>
+</head>
+	<body>
+
+  <form method="post"
+  action="add_hospital">
+    <table>
+        <tr>
+          <td>
+            NAME
+          </td>
+          <td colspan="2">
+            <input type="text" name="c_name" placeholder="HOSPITAL NAME" />
+          </td>
+        </tr>
+        <tr>
+          <td>NEAREST SIGNAL:</td>
+          <td colspan="3">
+            <select  id="hospital" name="n_circle" >
+              <optgroup label="SELECT NEAREST HOSPITAL">
+                  <% listSignals.forEach(function(signal){ %>
+                  <option value="<%= signal._id %>"><%= signal.name %></option>
+                  <% }) %>
+              </optgroup>
+          </select>
+        </td>
+      </tr>
+        <tr>
+          <td>HOSPITAL CLASS:</td>
+          <td colspan="3">
+            <select  id="h_class" name="h_class" >
+                <optgroup label="SELECT HOSPITAL CLASS">
+                    <option value="A">MULTI SPECIALIST</option>
+                    <option value="B">NORMAL</option>
+                </optgroup>
+            </select>
+        </td>
+
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="ADD" name="submit"/>
+          </td>
+        </tr>
+    </table>
+	</form>
+	</body>
+</html>

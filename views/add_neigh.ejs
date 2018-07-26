@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    ADD Neighbour
+  </title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+  body{
+    background-color: gray,
+    color:white
+  }
+    select {
+      border-radius: 3px;
+      color: black
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <form id="tableForm" action="/add_neigh" method="post">
+    <select id="signal" name="signal">
+        <optgroup label="Select signal">
+            <% listSignals.forEach(function(signal){ %>
+            <option value="<%= signal._id %>"><%= signal.name %></option>
+            <% }) %>
+        </optgroup>
+    </select>
+    </br>
+    </br>
+    SELECT CIRCLE NAMe YOU WANT TO ADD:
+    <label for="neighbour" value="ADD SIGNAL"/>
+    </br>
+    <select  id="neighbour" name="neighbour" >
+        <optgroup label="Select Neighbour">
+            <% listSignals.forEach(function(signal){ %>
+            <option value="<%= signal._id %>"><%= signal.name %></option>
+            <% }) %>
+        </optgroup>
+    </select>
+    </br>
+  </br>
+  DISTANCE:(meter)
+  <input type="number" name="distance"/></br>
+  TRAFFIC RATIO:(0-100%)
+  <input type="number" name="trafficMargin"/></br>
+  SPEED LIMIT:(meter/hour)
+  <input type="number" name="speedLimit"/>
+  </br>
+  </br>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
